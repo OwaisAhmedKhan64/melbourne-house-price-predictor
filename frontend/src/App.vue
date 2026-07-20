@@ -136,9 +136,8 @@ const predictPrice = async () =>
 </script>
 
 <style scoped>
-/* GENERAL LAYOUT */
 .container {
-  max-width: 1000px; /* Made wider to fit two columns */
+  max-width: 1000px; 
   margin: 40px auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0 20px;
@@ -149,25 +148,23 @@ const predictPrice = async () =>
   margin-bottom: 40px;
 }
 
-/* FLEXBOX LAYOUT (The Magic Part) */
 .content-row {
   display: flex;
-  flex-direction: row; /* Horizontal alignment */
-  gap: 40px;           /* Space between Result and Form */
-  align-items: flex-start; /* Align to top */
+  flex-direction: row; 
+  gap: 40px;           
+  align-items: flex-start; 
 }
 
 .result-section {
-  flex: 1; /* Takes up 1 part of space */
+  flex: 1; 
   position: sticky;
-  top: 20px; /* Keeps result in view if scrolling */
+  top: 20px; 
 }
 
 .form-section {
-  flex: 1; /* Takes up 1 part of space */
+  flex: 1; 
 }
 
-/* CARDS & FORMS */
 .card {
   background: white;
   padding: 30px;
@@ -201,7 +198,6 @@ const predictPrice = async () =>
   margin: 10px 0;
 }
 
-/* FORM ELEMENTS */
 .form-group {
   margin-bottom: 20px;
 }
@@ -219,7 +215,7 @@ input, select {
   border: 1px solid #dfe6e9;
   border-radius: 6px;
   font-size: 16px;
-  box-sizing: border-box; /* Important for width */
+  box-sizing: border-box; 
 }
 
 input:focus, select:focus {
@@ -227,7 +223,6 @@ input:focus, select:focus {
   border-color: #42b983;
 }
 
-/* BUTTONS */
 .predict-btn {
   width: 100%;
   padding: 15px;
@@ -259,10 +254,9 @@ input:focus, select:focus {
   text-align: center;
 }
 
-/* MOBILE RESPONSIVE: Stack them vertically on small screens */
 @media (max-width: 768px) {
   .content-row {
-    flex-direction: column-reverse; /* Form first, Result bottom */
+    flex-direction: column-reverse;
   }
 }
 </style>
