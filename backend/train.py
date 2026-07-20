@@ -12,7 +12,7 @@ X_raw = home_data[features]     # 6 columns
 y = home_data['Price']
 X = pd.get_dummies(X_raw)       # Many columns: 'Type' and 'Regionname' columns are one-hot encoded now.
 
-home_model = RandomForestRegressor(random_state=1)
+home_model = RandomForestRegressor(n_estimators=100, max_depth=12, random_state=1)
 
 print ("Training...")
 home_model.fit(X, y)
