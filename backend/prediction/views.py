@@ -9,11 +9,11 @@ import os
 MODEL_PATH = os.path.join(settings.BASE_DIR / 'home_model.joblib')
 COLUMNS_PATH = os.path.join(settings.BASE_DIR / 'model_columns.joblib')
 
-model = joblib.load (MODEL_PATH)
-columns = joblib.load (COLUMNS_PATH)
+model = joblib.load(MODEL_PATH)
+columns = joblib.load(COLUMNS_PATH)
 
-class PredictPrice (APIView):
-    def post (self, request):
+class PredictPrice(APIView):
+    def post(self, request):
         try:
             data = request.data
 
@@ -38,15 +38,9 @@ class PredictPrice (APIView):
             # Making the table
 
             df = pd.DataFrame ([input_data])[columns]
-
             prediction = model.predict (df)[0]
 
-            active_columns = [k for k, v in input_data.items() if v == 1]
-            print(f"Columns activated for this prediction: {active_columns}")
-
             return Response ({'predicted_price': round(prediction, 2)}, status=status.HTTP_200_OK)
-        
-            
         
         except Exception as e:
             return Response ({'error': str(e)},status=status.HTTP_400_BAD_REQUEST)
