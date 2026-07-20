@@ -12,7 +12,7 @@
 
                 <div v-if="prediction !== null" class="result-card success">
                     <h3>Estimated Value</h3>
-                    <p class="price">${{ prediction.toLocaleString() }}</p>
+                    <p class="price">${{ prediction.toLocaleString(undefined, { maximumFractionDigits: 0 }) }}</p>
                 </div>
 
                 <div v-else class="result-card placeholder">
