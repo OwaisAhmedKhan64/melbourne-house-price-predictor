@@ -2,12 +2,12 @@
 A machine learning regressor model which predicts the price of a house in Melbourne based upon features like location, number of rooms, etc.
 
 ### Model Performance
-* **Accuracy:** 82.37%
-* **Mean Absolute Percentage Error:** 17.63%
-* **Mean Absolute Error:** $189,550
+* **Accuracy:** 82.84%
+* **Mean Absolute Percentage Error:** 17.16%
+* **Mean Absolute Error:** $180,722
 
 ### Model Training
-The model was trained in **scikit-learn** using the **Random Forest Algorithm**. The following features were used to train the model:
+The model was trained in **scikit-learn** using the **Histogram-based Gradient Boosting Regression Tree Algorithm**. The following features were used to train the model:
 
 * `Rooms` (The number of rooms)
 * `Bathroom` (The number of bathrooms)
