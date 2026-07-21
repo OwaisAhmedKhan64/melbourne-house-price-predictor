@@ -119,7 +119,8 @@ const predictPrice = async () =>
     
     try
     {
-        const response = await axios.post ('http://127.0.0.1:8000/api/predict/', formData)
+        const apiBase = import.meta.env.VITE_API_URL;
+        const response = await axios.post(`${apiBase}/api/predict/`, formData)
         prediction.value = response.data.predicted_price
     }
     catch (err)

@@ -7,6 +7,7 @@ frontend/.eslintcache
 frontend/cypress/videos/
 frontend/cypress/screenshots/
 frontend/__screenshots__/
+frontend/.env
 frontend/.env.local
 frontend/.env.*.local
 frontend.vscode
