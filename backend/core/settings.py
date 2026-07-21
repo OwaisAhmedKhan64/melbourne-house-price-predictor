@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-4fod^&5e92%g-!nxrnk)z8o7l3)g#8-tr-m9e0+yw3z2pdtz0_')
 
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'owaisahmedkhan.pythonanywhere.com']
+ALLOWED_HOSTS = ['owaisahmedkhan.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -105,19 +106,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
-    "https://melbourne-house-price-predictor.vercel.app", # Your Vercel URL
-    "http://localhost:5173", # For local testing
+    "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://melbourne-house-price-predictor.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://owaisahmedkhan.pythonanywhere.com',
+    "https://owaisahmedkhan.pythonanywhere.com",
     'https://melbourne-house-price-predictor.vercel.app',
 ]
