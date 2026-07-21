@@ -47,6 +47,13 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+**Make Environment Variables:**
+Create a `.env` file in the `backend/` directory and add the following:
+```text
+DJANGO_SECRET_KEY=any-random-secret-key
+DJANGO_DEBUG=True
+```
+
 **Run the server:**
 ```bash
 python manage.py runserver
@@ -57,6 +64,12 @@ Open a new terminal window and navigate to the frontend folder:
 ```bash
 cd frontend
 npm install
+```
+
+**Make Environment Variables:**
+Create a `.env` file in the `frontend/` directory and add the following:
+```text
+VITE_API_URL=http://127.0.0.1:8000
 ```
 
 **Run the development server:**
